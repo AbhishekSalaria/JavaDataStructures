@@ -33,11 +33,42 @@ public class BinarySearchTree {
         }
     }
 
-    public void traverse(Node node) {
+    public void search(Node node, int value) {
+        if(node == null) {
+            System.out.println(value + " Not Found!");
+            return;
+        }
+        else if(node.value == value) {
+            System.out.println(value + " Found!");
+        }
+        else if(value < node.value) {
+            search(node.left,value);
+        }
+        else {
+            search(node.right,value);
+        }
+    }
+
+    public void inorderTraversal(Node node) {
         if(node != null) {
-            traverse(node.left);
+            inorderTraversal(node.left);
             System.out.print(" " + node.value);
-            traverse(node.right);
+            inorderTraversal(node.right);
+        }
+    }
+
+    public void preorderTraversal(Node node) {
+        if(node != null) {
+            System.out.print(" " + node.value);
+            preorderTraversal(node.left);
+            preorderTraversal(node.right);
+        }
+    }
+    public void postorderTraversal(Node node) {
+        if(node != null) {
+            postorderTraversal(node.left);
+            postorderTraversal(node.right);
+            System.out.print(" " + node.value);
         }
     }
 }

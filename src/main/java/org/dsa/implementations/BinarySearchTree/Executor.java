@@ -11,6 +11,23 @@ public class Executor {
         binarySearchTree.insert(root,4);
         binarySearchTree.insert(root,5);
 
-        binarySearchTree.traverse(root);
+        System.out.println("Inroder Traversal");
+        binarySearchTree.inorderTraversal(root);
+
+        System.out.println("");
+        System.out.println("Preorder Traversal");
+        binarySearchTree.preorderTraversal(root);
+
+        System.out.println("");
+        System.out.println("Postorder Traversal");
+        binarySearchTree.postorderTraversal(root);
+
+        System.out.println("");
+        binarySearchTree.search(root,1);
+        binarySearchTree.search(root,2);
+        binarySearchTree.search(root,3);
+        binarySearchTree.search(root,4);
+        binarySearchTree.search(root,5);
+        binarySearchTree.search(root,6);
     }
 }
