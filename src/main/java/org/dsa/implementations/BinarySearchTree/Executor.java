@@ -29,5 +29,9 @@ public class Executor {
         binarySearchTree.search(root,4);
         binarySearchTree.search(root,5);
         binarySearchTree.search(root,6);
+
+        root = binarySearchTree.delete(root,3);
+
+        binarySearchTree.postorderTraversal(root);
     }
 }

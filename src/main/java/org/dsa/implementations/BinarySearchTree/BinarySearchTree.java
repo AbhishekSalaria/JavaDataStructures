@@ -49,6 +49,49 @@ public class BinarySearchTree {
         }
     }
 
+    public Node delete(Node node, int value) {
+        if(node == null) {
+            return node;
+        }
+        if(value < node.value) {
+            node.left = delete(node.left,value);
+        } else if (value > node.value) {
+            node.right = delete(node.right,value);
+        }
+        else {
+            if(node.left == null || node.right == null) {
+                Node temp = null;
+                temp = node.left == null ? node.right : node.left;
+
+                if(temp == null) {
+                    return null;
+                }
+                else {
+                    return temp;
+                }
+            }
+            else  {
+                Node successor = getSuccessor(node);
+                node.value = successor.value;
+                node.right = delete(node.right,successor.value);
+                return node;
+            }
+        }
+        return node;
+    }
+
+    private Node getSuccessor(Node node) {
+        if(node == null) {
+            return null;
+        }
+        Node temp = node.right;
+
+        if(temp.left != null) {
+            temp = temp.left;
+        }
+        return  temp;
+    }
+
     public void inorderTraversal(Node node) {
         if(node != null) {
             inorderTraversal(node.left);
