@@ -30,7 +30,10 @@ public class Executor {
         binarySearchTree.search(root,5);
         binarySearchTree.search(root,6);
 
-        root = binarySearchTree.delete(root,3);
+        System.out.println("Depth before deleting 2,5: " + binarySearchTree.depth(root));
+        root = binarySearchTree.delete(root,2);
+        root = binarySearchTree.delete(root,5);
+        System.out.println("Depth after deleting 2,5: " + binarySearchTree.depth(root));
 
         binarySearchTree.postorderTraversal(root);
     }

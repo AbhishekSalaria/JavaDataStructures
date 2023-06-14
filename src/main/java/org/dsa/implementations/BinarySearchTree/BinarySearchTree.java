@@ -92,6 +92,23 @@ public class BinarySearchTree {
         return  temp;
     }
 
+    public int depth(Node node) {
+        if(node == null) {
+            return 0;
+        }
+        else {
+            int left_depth = depth(node.left);
+            int right_depth = depth(node.right);
+
+            if(left_depth > right_depth) {
+                return (left_depth + 1);
+            }
+            else {
+                return (right_depth + 1);
+            }
+        }
+    }
+
     public void inorderTraversal(Node node) {
         if(node != null) {
             inorderTraversal(node.left);
