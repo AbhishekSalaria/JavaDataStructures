@@ -54,6 +54,28 @@ public class LinkedList {
         }
     }
 
+    public void search(int data) {
+        Node current = this.head;
+
+        if (current != null && current.data == data) {
+            System.out.println("Record " + data + " found.");
+            return;
+        }
+
+        while (current != null && current.data != data) {
+            current = current.next;
+        }
+
+        if(current != null) {
+            System.out.println("Record " + data + " found.");
+        }
+
+        if(current == null) {
+            System.out.println("Record " + data + " not found.");
+        }
+
+    }
+
     public void display() {
 
         Node current = this.head;

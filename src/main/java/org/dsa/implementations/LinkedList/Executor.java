@@ -9,8 +9,13 @@ public class Executor {
         list.insert(3);
         list.insert(4);
         list.insert(5);
-
         list.display();
+
+        list.search(1);
+        list.search(3);
+        list.search(5);
+        list.search(6);
+
         list.delete(4);
         list.display();
         list.delete(7);

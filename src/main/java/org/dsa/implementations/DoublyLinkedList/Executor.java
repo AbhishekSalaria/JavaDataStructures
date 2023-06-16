@@ -16,6 +16,11 @@ public class Executor {
 
         doublyLinkedList.display();
 
+        doublyLinkedList.search(1);
+        doublyLinkedList.search(3);
+        doublyLinkedList.search(5);
+        doublyLinkedList.search(6);
+
         doublyLinkedList.delete(1);
         doublyLinkedList.delete(3);
         doublyLinkedList.delete(5);
